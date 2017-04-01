@@ -1,0 +1,121 @@
+	// Yellow
+	$top-color: #fcb040;
+
+	// Blue
+	$bottom-color: #1a134e;
+
+.top { background: $top-color; height: 720px; width: 100%;  position: relative; }
+.bottom { background: $bottom-color; height: 320px; width: 100%; position: relative;}
+#my_image {margin: 0 auto; position: absolute; bottom: -720px; left: 1050px;}
+
+#right_bank {width: 30%; margin: 0 auto; position: absolute; bottom: -100px; right: 10px;}
+#left_bank {width: 30%; margin: 0 auto; position: absolute; bottom: -100px; left: 10px; transform: scaleX(-1);}
+#palm_tree {width: 10%; margin: 0 auto; position: absolute; bottom: 100px; left: 10px; transform: scaleX(-1);}
+#goat {width: 14%; margin: 0 auto; position: absolute; bottom: -100px; right: 150px; bottom:80px}
+#goat_delivered {width: 14%; margin: 0 auto; position: absolute; bottom: -100px; left: 150px; bottom:80px;display:none}
+#goat_boat {width: 14%; margin: 0 auto; position: absolute; bottom: -720px; left: 2250px;display:none}
+
+#wolf_delivered {width: 16%; margin: 0 auto; position: absolute; bottom: -100px; left: 20px; bottom:80px;display:none}
+#wolf_boat {width: 16%; margin: 0 auto; position: absolute; bottom: -720px; left: 1200px;display:none}
+
+#wolf {width: 16%; margin: 0 auto; position: absolute; bottom: -100px; right: -40px; bottom:80px}
+#cabbage {width: 12%; margin: 0 auto; position: absolute; bottom: -100px; right: 10px; bottom:30px}
+
+#cabbage_boat {width: 12%; margin: 0 auto; position: absolute; bottom: -650px; left: 1100px;display:none}
+#cabbage_delivered {width: 12%; margin: 0 auto; position: absolute; bottom: -100px; left: 200px; bottom:30px;display:none}
+
+.waves { width: 100%; position: absolute; bottom: -5px; height: 50px; background: url(http://i.imgur.com/7CAWN1e.png); background-size: cover;}
+.waves img { width: 100%;}
+
+// Animations
+
+.waves {
+  animation:bgscroll 60s infinite linear;
+}
+
+@keyframes bgscroll {
+    from {background-position:0 0;}
+    to {background-position:-3390px 0px;}
+}
+
+.boat {
+animation: bob 3s infinite; /* IE 10+ */
+}
+
+@keyframes bob {
+0%,100%   { transform: translateY(9px); }
+50% { transform: translateY(-9px); }
+}
+
+#goat:hover {transform: translateY(-50px);}
+#wolf:hover {transform: translateY(-50px);}
+#cabbage:hover {transform: translateY(-50px);}
+#goat_delivered:hover {transform: translateY(-50px);}
+#wolf_delivered:hover {transform: translateY(-50px);}
+#cabbage_delivered:hover {transform: translateY(-50px);}
+#goat_boat:hover {transform: translateY(-20px);}
+#wolf_boat:hover {transform: translateY(-20px);}
+#cabbage_boat:hover {transform: translateY(-20px);}
+
+//Game over CSS
+.you-won,
+.game-over {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255,255,255,0.8);
+	padding: 2vh 5vh;
+	&.visible {
+		display: block;
+	}
+}
+
+h1, p {
+	text-align: center;
+}
+a { color: crimson; font-weight: bold;}
+
+body {
+	height: 100%;
+	min-height: 400px;
+	font-family:'Fira Mono','courier new', monospace;
+}
+button {
+	display: block;
+	margin: 10px auto;
+	border: 4px solid crimson;
+	border-radius: 5px;
+	padding: 4px 10px;
+	font-size: 14px;
+	text-align: center;
+	background: none;
+	color: crimson;
+	text-transform: uppercase;
+	font-weight: bold;
+	&.start-game {
+		display: inline-block;
+		animation: startit 2.2s ease-in-out infinite;
+		font-size: 24px;
+	}
+	&:hover {
+		background: crimson;
+		color: white;
+		a {
+			color: crimson;
+			font-weight: bold;
+		}
+	}
+	@keyframes startit{
+		0% { padding: 8px; }
+		50% {  padding: 14px; }
+		100% {  padding: 8px; }
+	}
+	a {
+		text-decoration: none;
+		color: crimson;
+		font-weight: bold;
+	}
+}
